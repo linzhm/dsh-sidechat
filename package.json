@@ -67,5 +67,10 @@
     "side-chat",
     "sidechat",
     "codex"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linzhm/dsh-sidechat.git"
+  },
+  "homepage": "https://github.com/linzhm/dsh-sidechat"
 }

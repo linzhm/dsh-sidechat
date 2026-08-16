@@ -1,5 +1,8 @@
 # dsh-sidechat
 
+[![CI](https://github.com/linzhm/dsh-sidechat/actions/workflows/ci.yml/badge.svg)](https://github.com/linzhm/dsh-sidechat/actions/workflows/ci.yml)
+
+
 Codex `/side`-style side chats for the DSH web GUI.
 
 A side chat forks the current session at its latest completed turn into a **lineage
@@ -43,7 +46,7 @@ Directly from this repository (pnpm resolves git dependencies; requires the
 installed `dsh` CLI on PATH):
 
 ```
-dsh plugin --profile web add https://github.com/<owner>/dsh-sidechat
+dsh plugin --profile web add https://github.com/linzhm/dsh-sidechat
 ```
 
 pnpm records the dependency in the profile `package.json` and the plugin CLI
