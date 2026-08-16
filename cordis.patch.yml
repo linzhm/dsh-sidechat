@@ -1,0 +1,6 @@
+# dsh-sidechat bundle patch: insert the side-chat plugin into the cordis tree.
+# The profile composes this package through dsh.profile.bundles; the loader
+# resolves `dsh-sidechat` from the profile node_modules (tree-outside install).
+- insert:
+    - id: dsh-sidechat
+      name: dsh-sidechat

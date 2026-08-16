@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm bundle
+      - name: Assert client bundle contract
+        run: |
+          head -1 lib/client.js | grep -q 'window.__ModuleLoader__.load({' \
+            && grep -q 'id: "dsh-sidechat"' lib/client.js \
+            && grep -q 'exports.apply' lib/client.js \
+            && echo "client bundle contract OK"
+      - name: Assert node half exports
+        run: |
+          grep -q 'export { BOUNDARY_PROMPT, apply, inject, name }' lib/index.js \
+            && echo "node half exports OK"

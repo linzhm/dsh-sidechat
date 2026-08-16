@@ -1,0 +1,7 @@
+# dependencies / build caches
+node_modules/
+.pnpm-store/
+*.tsbuildinfo
+
+# local toolchain scratch
+# (lib/ is committed so the package is directly installable from git)
